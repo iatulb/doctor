@@ -16,3 +16,6 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+$router->get('api/doctor/{id}', ['as' => 'doctor', 'uses' => 'DoctorController@get']);
+$router->post('api/doctor', ['as' => 'doctor', 'uses' => 'DoctorController@post']);
+$router->post('api/doctorpatient', ['as' => 'doctorpatient', 'uses' => 'DoctorPatientController@post']);
